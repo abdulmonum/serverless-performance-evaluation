@@ -1,0 +1,4 @@
+Chameleon==3.9.1
+componentize-py==0.13.3
+six==1.16.0
+spin-sdk==3.2.1

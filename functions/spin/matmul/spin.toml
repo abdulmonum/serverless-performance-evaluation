@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+name = "matmul"
+version = "0.1.0"
+authors = ["Abdul Monum <abdulmonum@gmail.com>"]
+description = "Matrix Multiplication function adopted from wasm-orchestration"
+
+[[trigger.http]]
+route = "/matmul"
+component = "matmul"
+
+[component.matmul]
+source = "main.wasm"
+allowed_outbound_hosts = []
+[component.matmul.build]
+command = "tinygo build -target=wasi -gc=leaking -o main.wasm main.go"
+watch = ["**/*.go", "go.mod"]

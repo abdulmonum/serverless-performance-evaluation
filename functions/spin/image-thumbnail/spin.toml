@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+name = "image-thumbnail"
+version = "0.1.0"
+authors = ["amonum"]
+description = "image-thumbnail application adopted from wasm-learning"
+
+[[trigger.http]]
+route = "/image-thumbnail"
+component = "image-thumbnail"
+
+[component.image-thumbnail]
+source = "target/wasm32-wasi/debug/image_thumbnail.wasm"
+allowed_outbound_hosts = []
+[component.image-thumbnail.build]
+command = "cargo build --target wasm32-wasi"
+watch = ["src/**/*.rs", "Cargo.toml"]

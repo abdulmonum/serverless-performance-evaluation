@@ -1,0 +1,21 @@
+[package]
+name = "image-thumbnail"
+authors = ["amonum"]
+description = "image-thumbnail application adopted from wasm-learning"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1"
+spin-sdk = "3.0.1"
+image = { version = "0.23.0", default-features = false, features = ["jpeg", "png", "gif"] }
+base64 = "0.12"
+serde_json = "1.0"
+serde = "1.0"
+serde_derive = "1.0"
+
+[workspace]
+

@@ -1,0 +1,17 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["Abdul Monum <abdulmonum@gmail.com>"]
+description = "float benchmark from Pyperformance"
+name = "float"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/float"
+component = "float"
+
+[component.float]
+source = "app.wasm"
+[component.float.build]
+command = "componentize-py -w spin-http componentize app -o app.wasm"
+watch = ["*.py", "requirements.txt"]

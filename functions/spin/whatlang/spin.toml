@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+name = "whatlang"
+version = "0.1.0"
+authors = ["Abdul Monum <abdulmonum@gmail.com>"]
+description = "whatlang function adopted from wasm-serverless-benchmarks"
+
+[[trigger.http]]
+route = "/whatlang"
+component = "whatlang"
+
+[component.whatlang]
+source = "target/wasm32-wasi/debug/whatlang.wasm"
+allowed_outbound_hosts = []
+[component.whatlang.build]
+command = "cargo build --target wasm32-wasi"
+watch = ["src/**/*.rs", "Cargo.toml"]

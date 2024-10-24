@@ -1,0 +1,17 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["amonum"]
+description = "chameleon benchmark adapted from FunctionBench"
+name = "chameleon"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/chameleon"
+component = "chameleon"
+
+[component.chameleon]
+source = "app.wasm"
+[component.chameleon.build]
+command = "componentize-py -w spin-http componentize app -o app.wasm"
+watch = ["*.py", "requirements.txt"]

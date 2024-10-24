@@ -1,0 +1,19 @@
+[package]
+name = "whatlang"
+authors = ["Abdul Monum <abdulmonum@gmail.com>"]
+description = "whatlang function adopted from wasm-serverless-benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1"
+spin-sdk = "3.0.1"
+wit-bindgen-rust = { git = "https://github.com/bytecodealliance/wit-bindgen", rev = "cb871cfa1ee460b51eb1d144b175b9aab9c50aba" }
+whatlang = "0.16.1"
+url = "1.4.0"
+
+
+[workspace]
